@@ -1,0 +1,16 @@
+{
+  "webMain": "https://ehire.51job.com",
+  "loginMember": "思迹信息（苏州）",
+  "loginUser": "t-footprint",
+  "loginPassword": "",
+  "searchConditions": [
+    {
+      "profileName": "上海MCU候选人",
+      "keyWords": "上海 and 嵌入式 and SDK and MCU"
+    },
+    {
+      "profileName": "苏州MCU候选人",
+      "keyWords": "苏州 and MCU 嵌入式 SDK"
+    }
+  ]
+}
