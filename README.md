@@ -1,6 +1,6 @@
 # Search Candidates
 
-提供在51job网页根据关键词搜索候选人简历信息，并导出所有候选人成excel表格，方便本地查看和过滤。
+提供在ehire.51job.com网页，根据关键词搜索候选人简历信息，并导出所有候选人生成excel表格，方便本地查看和过滤。
 
 ## 功能简介：
 1. 支持51job无忧简历库搜索，支持关键词搜索
@@ -13,7 +13,7 @@
 1. Python3.x，官网[下载路径](https://www.python.org/downloads/)
 1. Firefox，官网[下载路径](https://www.firefox.com.cn/)
 1. Python 插件，请使用命令行终端，进入本仓库，输入如下命令安装 `pip3 install -r requirement.txt`
-1. Firefox driver，请拷贝本仓库下firefox_driver中对应的OS版本，到python安装目录或者system32目录，是其在终端下可以被调用
+1. Firefox driver，请拷贝本仓库下firefox_driver中对应的OS版本，到python安装目录或者system32目录(Windows OS)，使其在终端下可以被调用
 
 ## 命令行参数
 ```
@@ -54,24 +54,27 @@ optional arguments:
 
 ## 使用示例
 1. 搜索关键词"上海 and 嵌入式 and SDK and MCU"的候选人 
-    1. 配置好"searchConditions"json<br>
+    1. 在Json文件中配置好"searchConditions"<br>
          ```
          {
          "profileName": "上海MCU候选人",
          "keyWords": "上海 and 嵌入式 or MCU"
          }       
          ```
-    1. 调用脚本命令如下，如需要导出详细的工作经历等信息，再加参数`-d` <br>
+    1. 调用脚本命令如下，如需要导出详细的工作经历等信息，请再加参数`-d` <br>
          ```
          python .\search_candidates.py -j .\input.json
          ```
-    1. Firefox浏览器会自动启动并且开始填充账户等信息，需要用户手动完成登陆检测。<br>
-       ![login_web](doc/login_web.png)
-    1. 确保进入到搜索主页面，如果之前有异常没有正常退出，请点击"强制下线".
-       ![main_page](doc/main_page.png)
-       ![force_to_logout](doc/force_to_logout.png)
-    1. 在命令行终端输入'y'确认，然后就可以放置后台自动搜索和导出后续人.<br>
+    1. Firefox浏览器会自动启动并且开始填充账户等信息，但是需要用户手动完成登陆检测。<br>
+       ![login_web](./doc/login_web.png)
+    1. 确保进入到搜索主页面，如果之前有异常没有正常退出，请点击"强制下线"。
+       ![main_page](./doc/main_page.png)
+       ![force_to_logout](./doc/force_to_logout.png)
+    1. 在命令行终端输入'y'确认，请注意，一定要正常登陆进入主界面之后。然后就可以放置后台自动搜索和导出候选人。<br>
          ```
          INFO:sr:Please login the website by manual because of AI checking in the website!
          Do you login successfully and jump to the main page? (y/n)y
          ```
+    1. 程序运行结束，会生成对于的excel表格，可以打开浏览。<br>
+       ![excel_output](./doc/excel_output.png)
+  
